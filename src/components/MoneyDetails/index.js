@@ -3,7 +3,10 @@
 import './index.css'
 
 const MoneyDetails = props => {
-  const {TitleData} = props
+  const {income, expenses} = props
+  const number = 0
+  const data = number + parseInt(income)
+  console.log(data)
 
   return (
     <ul>
@@ -30,7 +33,7 @@ const MoneyDetails = props => {
           <div>
             <p className="yourbalance-part">Your Income</p>
             <p data-testid=" incomeAmount" className="yourbalance-part">
-              Rs 0
+              Rs {income}
             </p>
           </div>
         </li>
@@ -43,7 +46,7 @@ const MoneyDetails = props => {
           <div>
             <p className="yourbalance-part">Your Expenses</p>
             <p data-testid="expensesAmount" className="yourbalance-part">
-              Rs 0
+              Rs {expenses}
             </p>
           </div>
         </li>

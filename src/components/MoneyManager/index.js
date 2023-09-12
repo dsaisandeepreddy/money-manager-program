@@ -23,6 +23,7 @@ const transactionTypeOptions = [
 
 class MoneyManager extends Component {
   state = {
+    initialList: transactionTypeOptions[0].optionId,
     TitleData: [],
     title: '',
     Amount: '',
@@ -45,9 +46,19 @@ class MoneyManager extends Component {
     }
     this.setState(prevState => ({
       TitleData: [...prevState.TitleData, newData],
+
       title: '',
-      Amount: '',
+      Amount,
+      income,
+      expenses,
     }))
+    if (typedData === 'Income') {
+      this.setState(prevState => ({
+        income: [...(prevState.income + Amount)],
+      }))
+    } else {
+      this.setState({expenses: Amount})
+    }
   }
 
   onDeletePurpose = id => {
@@ -62,6 +73,18 @@ class MoneyManager extends Component {
     console.log(Amount)
   }
 
+  onIncomePurpose = () => {
+    const {typedData} = this.state
+    this.setState(prevState => ({
+      TitleList: prevState.TitleList.map(eachContact => {
+        if (typedData === eachContact.optionId) {
+          return {...eachContact, typedData: !eachContact.optionId}
+        }
+        return eachContact
+      }),
+    }))
+  }
+
   onTitleData = event => {
     this.setState({title: event.target.value})
   }
@@ -73,7 +96,8 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {TitleData, title, typedData, Amount} = this.state
+    const {initialList, TitleData, title, Amount, income, expenses} = this.state
+
     return (
       <div>
         <div className="background-container">
@@ -82,7 +106,12 @@ class MoneyManager extends Component {
             Welcome back to your <span>Money Manager</span>
           </p>
         </div>
-        <MoneyDetails />
+
+        <MoneyDetails
+          key={initialList.optionId}
+          income={income}
+          expenses={expenses}
+        />
 
         <div className="main-container">
           <div className="showdowWhite-container">
