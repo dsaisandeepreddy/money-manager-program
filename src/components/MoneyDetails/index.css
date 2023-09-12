@@ -1,0 +1,39 @@
+/* Write your CSS here */
+
+.balance-part {
+  display: flex;
+  background-color: #ecfccb;
+  width: 350px;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.image-icon {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+}
+
+.yourbalance-part {
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+.balance-part-two {
+  display: flex;
+  background-color: #cffafe;
+  width: 350px;
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.balance-part-three {
+  display: flex;
+  background-color: #7c3aed;
+  width: 350px;
+  margin: 10px;
+  border-radius: 16px;
+}
+.flex-container {
+  display: flex;
+}

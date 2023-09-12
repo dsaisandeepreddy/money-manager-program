@@ -1,0 +1,40 @@
+/* Write your CSS here */
+.background-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  height: 180px;
+  width: 80vw;
+}
+.Richard-heading {
+  margin-left: 155px;
+  padding-top: 60px;
+}
+
+.showdowWhite-container {
+  background-color: #ffffff;
+  box-shadow: 10px;
+  margin-left: 94px;
+}
+
+.buttondata {
+  color: #ffffff;
+  background-color: #0b69ff;
+  border-radius: 8px;
+  padding: 10px;
+}
+.header-information {
+  display: flex;
+}
+
+.title-info {
+  margin-left: 10px;
+  font-weight: 500;
+}
+.amount-info {
+  margin-left: 65px;
+  font-weight: 500;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
